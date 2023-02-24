@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}日記作成 | MYSITE{% endblock %}
+
+{% block active_myapp_list %}active{% endblock %}
+
+{% block contents %}
+<div class="container my-div-style">
+    <div class="row">
+        <form method="POST" enctype='multipart/form-data'>
+            {% csrf_token %}
+            <table class="table">
+                {{ form.as_table }}
+            </table>
+            <button class="btn btn-primary" type="submit">作成</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
